@@ -1,21 +1,127 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+#navbar{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100vw;
-    height: 100vh;
-    background-color: rgb(170, 74, 82);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    height: 5rem;
+    border-bottom: 1px solid black;
+}
+#navbar h1{
+    font-size: 3rem;
 }
 
-#Timer-Container{
-    border: 1px solid black;
-    min-width: 10rem;
-    min-height: 10rem;
+#navbar button{
+    height: 3rem;
+    width: 8rem;
+    font-size: 1.2rem;
+}
+
+#date-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#date {
+  width: 15rem;
+  height: 3rem;
+  text-align: left;
+  margin-top: 1rem;
+  padding-left: 0.5rem;
+  font-size: 2rem;
+}
+
+
+#timer-container {
+  min-width: 10rem;
+  min-height: 10rem;
+  display: flex;
+  font-size: 3rem;
+}
+
+.timer-item {
+  margin-left: 5rem;
+}
+
+.timer-item::after {
+  
+    position: relative;
+  bottom: 3.5rem;
+  left: 2rem;
+  content: ":";
+  font-weight: bold;
+}
+
+.timer-item:last-child::after {
+  content: "";
+}
+
+footer{
+    height: 2.5rem;
+    width: 100%;
+    background-color: gray;
+    position: absolute;
+    bottom: 0;
+    border-top: black 1px solid;
+}
+
+footer h3{
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1000px){
+    #date-label{
+        position: relative;
+        top: 4rem;
+    }
+    
+    #timer-container {
+        
+        width: 100%;
+        min-height: 80%;
+        display: flex;
+
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        
+      }
+
+      .timer-item{
+        margin: 0; 
+        padding: 0; 
+    
+        /* margin-bottom: 3rem; */
+      }
+
+      .timer-item::after {
+        position: relative;
+        top: 3rem;
+        left: -5rem;
+        content: ":";
+        font-weight: bold;
+      }
 }

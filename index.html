@@ -7,18 +7,38 @@
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
-    <header>
-      <label for="date"
-        >Enter Date you want to count to
-        <input type="date" id="date"
+    <header><nav id="navbar"><h1>Countdown</h1><button id="reset">Reset Date</button></nav></header>
+    <section>
+      <label id="date-label" for="date"
+        >Enter Date
+        <input
+          type="date"
+          id="date"
+          value=""
+          onchange="dateDifference(this.value)"
+          required
+         
       /></label>
-    </header>
-    <main id="Timer-Container">
-      <section id="Days">Days</section>
-      <section id="Hours">Hours</section>
-      <section id="Minutes">Minutes</section>
-      <section id="Seconds">Seconds</section>
+    </section>
+    <main id="timer-container">
+      <section class="timer-item">
+        <p id="days">0</p>
+        Days
+      </section>
+      <section class="timer-item">
+        <p id="hours">0</p>
+        Hours
+      </section>
+      <section class="timer-item">
+        <p id="minutes">0</p>
+        Minutes
+      </section>
+      <section class="timer-item">
+        <p id="seconds">0</p>
+        Seconds
+      </section>
     </main>
+    <footer><h3>Developed by Oliver Graetz</h3></footer>
     <script src="app.js" async></script>
   </body>
 </html>
